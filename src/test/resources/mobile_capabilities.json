@@ -1,0 +1,11 @@
+{
+	"deviceName": "emulator-5554",
+	"platformName": "Android",
+	"platformVersion": "11",
+	"appPackage": "com.disney.wdpro.dlr",
+	"appActivity": "com.disney.wdpro.park.activities.SplashActivity",
+	"app": "your app path",
+	"automationName": "UiAutomator2",
+	"autoGrantPermissions": "true",
+    "skipServerInstallation": "true"
+}
