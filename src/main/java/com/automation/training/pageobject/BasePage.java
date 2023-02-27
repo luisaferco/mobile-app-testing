@@ -1,22 +1,15 @@
-package com.automation.training.pages;
+package com.automation.training.pageobject;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
+import static org.openqa.selenium.support.PageFactory.initElements;
 
-/**
- * Base class for all pages
- *
- * @author luisaferco
- */
 
 public abstract class BasePage<T extends AppiumDriver> {
-
 
     private static final int TIMEOUT = 10;
     protected final T driver;
@@ -24,11 +17,7 @@ public abstract class BasePage<T extends AppiumDriver> {
 
     public BasePage(AppiumDriver<?> driver) {
         this.driver = (T) driver;
-        initElements();
-    }
-
-    private void initElements() {
-        PageFactory.initElements(new AppiumFieldDecorator(
+        initElements(new AppiumFieldDecorator(
                 driver, Duration.ofSeconds(0)), this);
     }
 
@@ -36,7 +25,7 @@ public abstract class BasePage<T extends AppiumDriver> {
         return (T) driver;
     }
 
-    public void quit(){
+    public void dispose(){
         driver.quit();
     }
 
@@ -51,5 +40,10 @@ public abstract class BasePage<T extends AppiumDriver> {
         element.click();
     }
 
+    public void type(MobileElement element, String text) {
+        WebDriverWait wait = new WebDriverWait(driver, TIMEOUT);
+        wait.until(ExpectedConditions.visibilityOf(element));
+        element.setValue(text);
+    }
 
 }
