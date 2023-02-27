@@ -5,7 +5,7 @@ import com.automation.training.exceptions.NotFoundValueException;
 
 import java.util.Arrays;
 
-public enum DriversConfigFile {
+public enum CapabilitiesFile {
 
     IOS_FILE("iOS","ios.properties"),
     ANDROID_FILE("Android","android.properties");
@@ -14,7 +14,7 @@ public enum DriversConfigFile {
     private final String fileName;
 
 
-    DriversConfigFile(String platform,String fileName){
+    CapabilitiesFile(String platform, String fileName){
         this.platform = platform;
         this.fileName = fileName;
     }
@@ -28,10 +28,10 @@ public enum DriversConfigFile {
     }
 
     public static String getFileNameCalled(String platform){
-        return Arrays.stream(DriversConfigFile.values())
+        return Arrays.stream(CapabilitiesFile.values())
                 .filter(driversConfigFile -> driversConfigFile.platform.equals(platform))
                 .findFirst()
-                .orElseThrow(() -> new NotFoundValueException("config file related to " + platform + "platform not found"))
+                .orElseThrow(() -> new NotFoundValueException(String.format("config file related to %s platform not found", platform)))
                 .getFileName();
     }
 
