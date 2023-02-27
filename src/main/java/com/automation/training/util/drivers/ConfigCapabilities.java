@@ -11,7 +11,7 @@ public abstract class ConfigCapabilities {
     private Optional<Capabilities> capabilities;
     private final String platform;
     private static final String FILE_SEPARATOR = File.separator;
-    public static final String PATH_RESOURCES = String.format("src%stest%sresources%sconfig%s", FILE_SEPARATOR, FILE_SEPARATOR, FILE_SEPARATOR, FILE_SEPARATOR);
+    private static final String PATH_RESOURCES = String.format("src%stest%sresources%sconfig%s", FILE_SEPARATOR, FILE_SEPARATOR, FILE_SEPARATOR, FILE_SEPARATOR);
 
     ConfigCapabilities(String platform){
         this.platform = platform;
@@ -20,7 +20,7 @@ public abstract class ConfigCapabilities {
 
     public DesiredCapabilities uploadCapabilities() {
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
-        String propertiesFileName = PATH_RESOURCES + DriversConfigFile.getFileNameCalled(platform);
+        String propertiesFileName = PATH_RESOURCES + CapabilitiesFile.getFileNameCalled(platform);
         ReadProperties properties = ReadProperties.getInstance(propertiesFileName);
         properties.getProperties().entrySet().iterator().forEachRemaining(entry -> {
                     String property = entry.getKey().toString();

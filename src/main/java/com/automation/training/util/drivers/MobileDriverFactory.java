@@ -3,8 +3,6 @@ package com.automation.training.util.drivers;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
-import io.appium.java_client.ios.IOSDriver;
-import io.appium.java_client.ios.IOSElement;
 import io.appium.java_client.remote.MobilePlatform;
 
 /**
@@ -12,41 +10,31 @@ import io.appium.java_client.remote.MobilePlatform;
  * Android is selected by default
  * @param: PlatformName
  */
-public class MobileDriverFactory {
+public class MobileDriverFactory extends ConfigCapabilities {
 
-    private String platformName;
-    private static MobileDriverFactory instance;
-    public static AndroidDriver<AndroidElement> androidDriver;
-
-    private MobileDriverFactory(){
-        this.platformName = getPlaform();
+    private MobileDriverFactory(String platformName){
+        super(platformName);
     }
 
-    public static MobileDriverFactory getInstance(){
-        if (instance == null) {
-            instance = new MobileDriverFactory();
-        }
-        return instance;
+    public static MobileDriverFactory getInstanceFactory(){
+        return new MobileDriverFactory(MobilePlatform.ANDROID);
     }
-
 
     public AppiumDriver<?> getDriver(){
-       MobileDriver.ANDROID.setDriver();
-        return androidDriver;
-    }
-
-    private String getPlaform() {
-        return System.getenv("platform.name").equals("Android")? MobilePlatform.ANDROID : MobilePlatform.IOS;
-    }
-
-    public void quit(){
-        if(instance !=null){
-            if(androidDriver != null) {
-                androidDriver.quit();
-            }
-        }
+        AppiumServerAddress serverAddress = new AppiumServerAddress();
+        serverAddress.setAddress();
+        return new AndroidDriver<AndroidElement>(serverAddress.getRemoteAddress(), super.uploadCapabilities());
     }
 }
+
+/*enum MobileDriver {
+
+    ANDROID("Android",(address) -> {
+            return new AndroidDriver<AndroidElement>(address.getRemoteAddress());
+    }),
+    IOS ("iOS",(AppiumServerAddress address, DesiredCapabilities desiredCapabilities) ->
+            new IOSDriver<IOSElement>(address.getRemoteAddress(),desiredCapabilities);
+    );
 
 enum MobileDriver {
 
@@ -64,6 +52,4 @@ enum MobileDriver {
     };
 
 
-    public abstract AppiumDriver<?> setDriver();
-
-}
+ */
