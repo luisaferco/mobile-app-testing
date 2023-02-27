@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Training Mobile Test Suite">
+    <test name="Search Test">
+        <parameter name="searchCriteria" value="Hello World"/>
+        <classes>
+            <class name="com.automation.training.tests.NavigationTest"/>
+        </classes>
+    </test>
+</suite> <!-- Suite -->
