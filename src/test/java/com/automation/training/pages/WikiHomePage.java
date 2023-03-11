@@ -3,15 +3,14 @@ package com.automation.training.pages;
 import com.automation.training.pageobject.BasePage;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
-public class WikiHomePage extends BasePage<AndroidDriver<AndroidElement>> {
+public class WikiHomePage extends BasePage<AppiumDriver<MobileElement>> {
 
 
     @AndroidFindBy(id = "org.wikipedia:id/menu_icon")
     private MobileElement menu;
+
     @AndroidFindBy(className = "android.widget.TextView")
     private MobileElement layoutSearch;
 
@@ -21,6 +20,7 @@ public class WikiHomePage extends BasePage<AndroidDriver<AndroidElement>> {
     public WikiHomePage(AppiumDriver<?> driver) {
         super(driver);
     }
+
     public SearchPage openSearch(){
         click(layoutSearch);
         return new SearchPage(getDriver());
