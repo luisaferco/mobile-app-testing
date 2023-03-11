@@ -7,13 +7,21 @@ import static com.automation.training.exceptions.FailedUrlConnectionException.FA
 
 public class AppiumServerAddress {
 
+      private String serverIp;
+      private String serverPort;
+
+      public AppiumServerAddress(String serverIp, String serverPort) {
+            this.serverIp = serverIp;
+            this.serverPort = serverPort;
+      }
+
       private URL remoteAddress;
       public URL getRemoteAddress(){
             return remoteAddress;
       }
       public void setAddress() {
             try {
-                  this.remoteAddress = new URL("http://127.0.0.1:4723/wd/hub");
+                  this.remoteAddress = new URL(String.format("http://%s:%s/wd/hub",serverIp,serverPort));
             } catch (MalformedURLException e) {
                   throw new FailedUrlConnectionException(String.format(FAILED_URL_CALLING, e.getMessage()));
             }

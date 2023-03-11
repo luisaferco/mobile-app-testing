@@ -1,8 +1,8 @@
 package com.automation.training.util.drivers;
 
 import com.automation.training.exceptions.NotFoundFileException;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.File;
 import java.io.FileInputStream;
