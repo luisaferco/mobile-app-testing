@@ -1,5 +1,6 @@
 package com.automation.training.tests;
 
+import com.automation.training.pages.ItemPage;
 import com.automation.training.pages.SearchPage;
 import com.automation.training.pages.WikiHomePage;
 import org.testng.Assert;
@@ -23,8 +24,9 @@ public class NavigationTest extends BaseMobileTest {
     public void navigateToSearchDetails(String searchCriteria) {
         WikiHomePage wikiHomePage = getWikiHomePage();
         SearchPage searchPage = wikiHomePage.openSearch().search(searchCriteria);
-        Assert.assertTrue(searchPage.getResultByIndex(0).getResultsTitleSelected().contains(searchCriteria),
-                "Expected that search result selected contains search criteria");
+        ItemPage pageResult = searchPage.getResultByIndex(0);
+        Assert.assertTrue(pageResult.getResultsTitleSelected().contains(searchCriteria),
+                "Expected that search result selected: " + pageResult.getResultsTitleSelected() + " contains search criteria: " + searchCriteria);
     }
 
 
