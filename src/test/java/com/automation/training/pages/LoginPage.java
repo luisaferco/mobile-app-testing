@@ -2,11 +2,13 @@ package com.automation.training.pages;
 
 import com.automation.training.pageobject.BasePage;
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import io.appium.java_client.pagefactory.AppiumElementLocatorFactory;
 
-public class LoginPage extends BasePage<AndroidDriver<AndroidElement>> {
+public class LoginPage extends BasePage<AppiumDriver<MobileElement>> {
 
 
     public LoginPage(AppiumDriver<?> driver) {
@@ -14,19 +16,19 @@ public class LoginPage extends BasePage<AndroidDriver<AndroidElement>> {
     }
 
     @AndroidFindBy(id = "org.wikipedia:id/create_account_username")
-    private AndroidElement userNameTxt;
+    private MobileElement userNameTxt;
 
     @AndroidFindBy(id = "org.wikipedia:id/create_account_password_input")
-    private AndroidElement passwordTxt;
+    private MobileElement passwordTxt;
 
     @AndroidFindBy(id = "org.wikipedia:id/create_account_password_repeat")
-    private AndroidElement passwordRepeatTxt;
+    private MobileElement passwordRepeatTxt;
 
     @AndroidFindBy(id = "org.wikipedia:id/create_account_email")
-    private AndroidElement emailTxt;
+    private MobileElement emailTxt;
 
     @AndroidFindBy(id = "org.wikipedia:id/create_account_submit_button")
-    private AndroidElement submitButton;
+    private MobileElement submitButton;
 
 
     public WikiHomePage loginIn(String userName, String password, String email) {

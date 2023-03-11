@@ -26,12 +26,18 @@ public abstract class BasePage<T extends AppiumDriver> {
     }
 
     public void dispose(){
-        driver.quit();
+        if(driver != null) {
+            driver.quit();
+        }
+    }
+
+    public void refresh() {
+        driver.launchApp();
     }
 
     /**
      *  custom click
-     * @param element : AndroidElement
+     * @param element : MobileElement
      * @author luisaferco
      */
     public void click(MobileElement element) {
