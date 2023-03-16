@@ -1,15 +1,14 @@
 package com.automation.training.tests;
 
-import com.automation.training.pages.StartPage;
-import com.automation.training.pages.WikiHomePage;
+import com.automation.training.pageobject.pages.StartPage;
+import com.automation.training.pageobject.pages.WikiHomePage;
 import com.automation.training.util.drivers.AppiumConfig;
 import com.automation.training.util.drivers.MobileDriverFactory;
 import io.appium.java_client.AppiumDriver;
 import org.aeonbits.owner.ConfigFactory;
 import org.apache.log4j.Logger;
-import org.testng.annotations.AfterSuite;
-import com.automation.training.pages.LoginPage;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.*;
+import com.automation.training.pageobject.pages.LoginPage;
 
 /**
  * Base Test suite
@@ -23,19 +22,19 @@ public abstract class BaseMobileTest {
     public static final Logger LOGGER = Logger.getLogger(BaseMobileTest.class);
 
 
-    @BeforeSuite(alwaysRun = true)
-    public void beforeSuite() {
-        AppiumConfig config = ConfigFactory.create(AppiumConfig.class);
+    @BeforeMethod(alwaysRun = true)
+    public void beforeMethod() {
+       AppiumConfig config = ConfigFactory.create(AppiumConfig.class);
        MobileDriverFactory factory = new MobileDriverFactory();
-       AppiumDriver<?> driver = factory.getDriver(config);
+       AppiumDriver driver = factory.getDriver(config);
        startPage = new StartPage(driver);
        loginPage = new LoginPage(driver);
        wikiHomePage = new WikiHomePage(driver);
     }
 
-    @AfterSuite(alwaysRun = true)
-    public void afterSuite() {
-        loginPage.dispose();
+    @AfterMethod(alwaysRun = true)
+    public void afterMethod() {
+        wikiHomePage.dispose();
     }
 
     public LoginPage getLoginPage() {
@@ -47,7 +46,6 @@ public abstract class BaseMobileTest {
     }
 
     public WikiHomePage getWikiHomePage() {
-        wikiHomePage.refresh();
         return wikiHomePage;
     }
 }
