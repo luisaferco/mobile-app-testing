@@ -1,23 +1,23 @@
-package com.automation.training.pages;
+package com.automation.training.pageobject.pages;
 
 import com.automation.training.pageobject.BasePage;
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import org.openqa.selenium.WebElement;
 
-public class WikiHomePage extends BasePage<AppiumDriver<MobileElement>> {
+public class WikiHomePage extends BasePage<AppiumDriver> {
 
 
     @AndroidFindBy(id = "org.wikipedia:id/menu_icon")
-    private MobileElement menu;
+    private WebElement menu;
 
     @AndroidFindBy(className = "android.widget.TextView")
-    private MobileElement layoutSearch;
+    private WebElement layoutSearch;
 
     @AndroidFindBy(id = "org.wikipedia:id/main_drawer_login_button")
-    private MobileElement logInButton;
+    private WebElement logInButton;
 
-    public WikiHomePage(AppiumDriver<?> driver) {
+    public WikiHomePage(AppiumDriver driver) {
         super(driver);
     }
 
