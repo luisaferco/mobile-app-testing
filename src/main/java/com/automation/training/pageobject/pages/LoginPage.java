@@ -1,34 +1,31 @@
-package com.automation.training.pages;
+package com.automation.training.pageobject.pages;
 
 import com.automation.training.pageobject.BasePage;
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
-import io.appium.java_client.pagefactory.AppiumElementLocatorFactory;
+import org.openqa.selenium.WebElement;
 
-public class LoginPage extends BasePage<AppiumDriver<MobileElement>> {
+public class LoginPage extends BasePage<AppiumDriver> {
 
 
-    public LoginPage(AppiumDriver<?> driver) {
+    public LoginPage(AppiumDriver driver) {
         super(driver);
     }
 
     @AndroidFindBy(id = "org.wikipedia:id/create_account_username")
-    private MobileElement userNameTxt;
+    private WebElement userNameTxt;
 
     @AndroidFindBy(id = "org.wikipedia:id/create_account_password_input")
-    private MobileElement passwordTxt;
+    private WebElement passwordTxt;
 
     @AndroidFindBy(id = "org.wikipedia:id/create_account_password_repeat")
-    private MobileElement passwordRepeatTxt;
+    private WebElement passwordRepeatTxt;
 
     @AndroidFindBy(id = "org.wikipedia:id/create_account_email")
-    private MobileElement emailTxt;
+    private WebElement emailTxt;
 
     @AndroidFindBy(id = "org.wikipedia:id/create_account_submit_button")
-    private MobileElement submitButton;
+    private WebElement submitButton;
 
 
     public WikiHomePage loginIn(String userName, String password, String email) {
