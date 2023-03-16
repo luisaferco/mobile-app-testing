@@ -22,12 +22,12 @@ mvn clean install
 ```
 
 
-#### Config devices🔧
+### Device setup🔧
 - Physical devices: On your device, activate developer mode, and enable "USB Debugging".
 - Emulated device: 
   - Android
     Prerequisites: Android SDK installed.
-    > It is necessary to ensure that is enabled the 'Hypervisor' on your local enviroment, [how to configure it](https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v))
+    > It is necessary to ensure that is enabled the 'Hypervisor' on your local enviroment, ([how to configure it](https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v))
     
     It is recommended to restart the computer before running an emulator in order for the changes to take effect.
   - Create a Virtual Device (AVD) in Android Studio, more info [link](https://developer.android.com/studio/run/managing-avds?hl=es-419#createavd)
@@ -38,7 +38,7 @@ mvn clean install
     Also, the .apk file can be dragged to the emulated device.
 
 
-#### Getting Capabilities🔩
+#### Capabilities🔩
 
 Appium capabilities must be configured in one of the android.properties or ios.properties files depending on the selected device type. Must be include device-related information such as platformName, platformVersion, deviceName, and appPackage/appActivity for Android devices
 
