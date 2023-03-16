@@ -1,11 +1,13 @@
 package com.automation.training.tests;
 
-import com.automation.training.pages.ItemPage;
-import com.automation.training.pages.SearchPage;
-import com.automation.training.pages.WikiHomePage;
+import com.automation.training.pageobject.pages.ItemPage;
+import com.automation.training.pageobject.pages.SearchPage;
+import com.automation.training.pageobject.pages.WikiHomePage;
 import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+
+import java.util.Arrays;
 
 public class NavigationTest extends BaseMobileTest {
 
@@ -25,8 +27,15 @@ public class NavigationTest extends BaseMobileTest {
         WikiHomePage wikiHomePage = getWikiHomePage();
         SearchPage searchPage = wikiHomePage.openSearch().search(searchCriteria);
         ItemPage pageResult = searchPage.getResultByIndex(0);
-        Assert.assertTrue(pageResult.getResultsTitleSelected().contains(searchCriteria),
-                "Expected that search result selected: " + pageResult.getResultsTitleSelected() + " contains search criteria: " + searchCriteria);
+
+        Arrays.stream(searchCriteria.split(" "))
+            .forEach(word ->
+                Assert.assertTrue(pageResult.getResultsTitleSelected().contains(word),
+                       String.format("Expected that search result selected: %s contains search criteria: %s",
+                               pageResult.getResultsTitleSelected(),
+                               searchCriteria)
+                        )
+            );
     }
 
 
