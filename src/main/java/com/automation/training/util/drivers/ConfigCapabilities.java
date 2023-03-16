@@ -7,6 +7,10 @@ import java.io.File;
 import java.util.Map;
 import java.util.Optional;
 
+/**
+ * ConfigCapabilities class to get desired capabilities to create
+ * a new Appium driver session
+ */
 public abstract class ConfigCapabilities {
 
     private Optional<Capabilities> capabilities;
