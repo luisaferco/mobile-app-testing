@@ -1,10 +1,17 @@
 package com.automation.training.util.drivers;
 
 import com.automation.training.exceptions.FailedUrlConnectionException;
+
 import java.net.MalformedURLException;
 import java.net.URL;
+
 import static com.automation.training.exceptions.FailedUrlConnectionException.FAILED_URL_CALLING;
 
+/**
+ * AppiumServerAddress class to create the URL remote address
+ * to communicate with the Appium server
+ * @author luisaferco
+ */
 public class AppiumServerAddress {
 
       private String serverIp;
