@@ -4,9 +4,10 @@ import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 /**
- * Get driver whether environment variable has been configured.
+ * MobileDriverFactory class to create a new mobile driver
+ * whether config capabilities provides Android connection or
+ * iOs connection
  * Android is selected by default
- * @param: PlatformName
  */
 public class MobileDriverFactory extends ConfigCapabilities {
 
@@ -14,7 +15,12 @@ public class MobileDriverFactory extends ConfigCapabilities {
         super();
     }
 
-    public AppiumDriver<?> getDriver(AppiumConfig config){
+    /**
+     * get a new driver instance
+     * @param config : AppiumConfig
+     * @return AppiumDriver
+     */
+    public AppiumDriver getDriver(AppiumConfig config){
         AppiumServerAddress address = new AppiumServerAddress(config.host(), config.port());
         address.setAddress();
         DesiredCapabilities capabilities = super.uploadCapabilities(config.platformName());
