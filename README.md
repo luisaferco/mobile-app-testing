@@ -4,15 +4,16 @@
 
 ## Description 
 A training automation project to test native apps. As an example, the Wikipedia app has been selected to use in this automation project. The .apk file is stored within `/src/test/resources` path 
+GitHub [mobile-app-testing](https://github.com/luisaferco/mobile-app-testing)
 
 ## Starting 🚀
 
 ### Environment setting
 
-  - Java JDK installed 1.8 [download](https://www.oracle.com/co/java/technologies/javase/javase8-archive-downloads.html)
+  - Java JDK installed 11 [download](https://www.oracle.com/co/java/technologies/javase/jdk11-archive-downloads.html)
   - Maven installed [download]()
   - Appium Server installed [download](https://github.com/appium/appium-desktop/releases)
-  - Any physical o emulated device to test.
+  - Any physical o emulated device.
 
 
 ### Installation 🛠️
@@ -22,15 +23,15 @@ mvn clean install
 ```
 
 
-### Device setup🔧
-- Physical devices: On your device, activate developer mode, and enable "USB Debugging".
+### Device setup 🔧
+- Physical devices: On your device, activate developer mode, then enable "USB Debugging".
 - Emulated device: 
   - Android
     Prerequisites: Android SDK installed.
-    > It is necessary to ensure that is enabled the 'Hypervisor' on your local enviroment, ([how to configure it](https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v))
+    > It is necessary to ensure that the 'Hypervisor' is enabled on your local environment, ([how to configure it](https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v))
     
     It is recommended to restart the computer before running an emulator in order for the changes to take effect.
-  - Create a Virtual Device (AVD) in Android Studio, more info [link](https://developer.android.com/studio/run/managing-avds?hl=es-419#createavd)
+  - Create a Virtual Device (AVD) in Android Studio, ([how to create it](https://developer.android.com/studio/run/managing-avds?hl=es-419#createavd))
   - Use `adb` command to install the .apk file on your emulated device 
   
     > `install [option] <PATH>`
@@ -38,7 +39,7 @@ mvn clean install
     Also, the .apk file can be dragged to the emulated device.
 
 
-#### Capabilities🔩
+#### Capabilities 🔩
 
 Appium capabilities must be configured in one of the android.properties or ios.properties files depending on the selected device type. Must be include device-related information such as platformName, platformVersion, deviceName, and appPackage/appActivity for Android devices
 
@@ -51,7 +52,7 @@ returning a list of connected devices with their deviceId associated
 
 ![img.png](img.png)
 
-Some main capabilities can be known:
+**Some useful command lines to get capabilities:**
 
 `PlatformVersion`: adb -s "deviceId" shell getprop ro.build.version.release
 
@@ -60,13 +61,14 @@ Some main capabilities can be known:
 
 ### Running tests 🧪
 
-Open a terminal and run the following command:
+-Once you have your device enabled, open the Appium either the Appium server or the Appium GUI you have configured and open a connection with IP address 127.0.0.1 and port 4723.
+-Open a terminal and run the following command:
 
-```
-mvn clean verify
-```
+  ```
+  mvn clean verify
+  ```
 
 ## Links 🔗
-Have comments? Let me know on Twitter: [@Luisaferco](https://twitter.com/LuisaFer0826)
+Do you have comments? Let me know on Twitter: [@Luisaferco](https://twitter.com/LuisaFer0826)
 
 My Linkedin profile on [Luisa Colorado](https://www.linkedin.com/in/luisa-fernanda-ce-81a399137)

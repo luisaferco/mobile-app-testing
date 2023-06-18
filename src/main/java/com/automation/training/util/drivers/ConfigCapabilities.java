@@ -13,7 +13,7 @@ import java.util.Optional;
  */
 public abstract class ConfigCapabilities {
 
-    private Optional<Capabilities> capabilities;
+    private final Optional<Capabilities> capabilities;
     private static final String APP = "app";
     private static final String FILE_SEPARATOR = File.separator;
     private static final String PATH_RESOURCES = String.format("src%stest%sresources%sconfig%s", FILE_SEPARATOR, FILE_SEPARATOR, FILE_SEPARATOR, FILE_SEPARATOR);
