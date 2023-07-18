@@ -20,19 +20,19 @@ import static org.openqa.selenium.support.PageFactory.initElements;
 public abstract class BasePage<T extends AppiumDriver> {
 
     private static final int TIMEOUT = 10;
-    protected final T driver;
+    protected final AppiumDriver driver;
     protected WebDriverWait wait;
 
 
     public BasePage(AppiumDriver driver) {
-        this.driver = (T) driver;
+        this.driver = driver;
         this.wait = new WebDriverWait(driver,Duration.ofSeconds(TIMEOUT));
         initElements(new AppiumFieldDecorator(
-                driver, Duration.ofSeconds(0)), this);
+                driver, Duration.ofSeconds(1)), this);
     }
 
-    public T getDriver() {
-        return (T) driver;
+    public AppiumDriver getDriver() {
+        return driver;
     }
 
     public void dispose(){

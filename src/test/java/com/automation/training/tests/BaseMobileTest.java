@@ -21,6 +21,11 @@ public abstract class BaseMobileTest {
     private static StartPage startPage;
     public static final Logger LOGGER = Logger.getLogger(BaseMobileTest.class);
 
+    @BeforeSuite
+    @Parameters({"conf"})
+    public void setUpEnv(String config){
+
+    }
 
     @BeforeMethod(alwaysRun = true)
     public void beforeMethod() {

@@ -1,0 +1,14 @@
+userName: YOUR_USERNAME
+accessKey: YOUR_ACCESS_KEY
+framework: testng
+app: bs://sample.app
+platforms:
+  - platformName: android
+    deviceName: Samsung Galaxy S23 Ultra
+    platformVersion: 13.0
+  - platformName: android
+    deviceName: Xiaomi Redmi Note 9
+    platformVersion: 10.0
+  - platformName: android
+    deviceName: Motorola Moto G9 Play
+    platformVersion: 10.0
