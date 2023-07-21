@@ -6,7 +6,7 @@ capabilities:
   projectName: Mobile app testing
   source: testng:appium-sample-sdk:v1.1
   app: bs://<custom_id>
-  browserstackLocal: true
+  browserstackLocal: false
   debug: false # <boolean> # Set to true if you need screenshots for every selenium command ran
   networkLogs: false # <boolean> Set to true to enable HAR logs capturing
   consoleLogs: errors

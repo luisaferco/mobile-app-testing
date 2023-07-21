@@ -113,7 +113,7 @@
 						<version>${maven.surefire.version}</version>
 						<configuration>
 							<suiteXmlFiles>
-								<suiteXmlFile>src/test/resources/Local.xml</suiteXmlFile>
+								<suiteXmlFile>src/test/resources/LocalTest.xml</suiteXmlFile>
 							</suiteXmlFiles>
 						</configuration>
 						<dependencies>
@@ -138,7 +138,7 @@
 						<version>${maven.surefire.version}</version>
 						<configuration>
 							<suiteXmlFiles>
-								<suiteXmlFile>src/test/resources/Local.xml</suiteXmlFile>
+								<suiteXmlFile>src/test/resources/LocalTest.xml</suiteXmlFile>
 							</suiteXmlFiles>
 						</configuration>
 					</plugin>
@@ -156,7 +156,7 @@
 						<version>${maven.surefire.version}</version>
 						<configuration>
 							<suiteXmlFiles>
-								<suiteXmlFile>src/test/resources/Suite.xml</suiteXmlFile>
+								<suiteXmlFile>src/test/resources/SuiteTest.xml</suiteXmlFile>
 							</suiteXmlFiles>
 						</configuration>
 					</plugin>
