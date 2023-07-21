@@ -31,7 +31,7 @@ mvn clean install
     > It is necessary to ensure that the 'Hypervisor' is enabled on your local environment, ([how to configure it](https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v))
     
     It is recommended to restart the computer before running an emulator in order for the changes to take effect.
-  - Create a Virtual Device (AVD) in Android Studio, ([how to create it](https://developer.android.com/studio/run/managing-avds?hl=es-419#createavd))
+  - Create a Virtual Device (AVD) in Android Studio, [how to create it](https://developer.android.com/studio/run/managing-avds?hl=es-419#createavd))
   - Use `adb` command to install the .apk file on your emulated device 
   
     > `install [option] <PATH>`
