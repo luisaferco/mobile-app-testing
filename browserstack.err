@@ -1,9 +1,0 @@
-[Wed, 19 Jul 2023 23:40:18 GMT] Error from server Error: listen EADDRINUSE: address already in use \\.\pipe\browserstack\daemonInstance - \\.\pipe\browserstack\daemonInstance
-[Wed, 19 Jul 2023 23:45:09 GMT] Error from server Error: listen EADDRINUSE: address already in use \\.\pipe\browserstack\daemonInstance - \\.\pipe\browserstack\daemonInstance
-[Wed, 19 Jul 2023 23:46:55 GMT] Error from server Error: listen EADDRINUSE: address already in use \\.\pipe\browserstack\daemonInstance - \\.\pipe\browserstack\daemonInstance
-[Wed, 19 Jul 2023 23:48:53 GMT] Error from server Error: listen EADDRINUSE: address already in use \\.\pipe\browserstack\daemonInstance - \\.\pipe\browserstack\daemonInstance
-[Wed, 19 Jul 2023 23:49:28 GMT] Error from server Error: listen EADDRINUSE: address already in use \\.\pipe\browserstack\daemonInstance - \\.\pipe\browserstack\daemonInstance
-[Thu, 20 Jul 2023 02:33:17 GMT] Error from server Error: listen EADDRINUSE: address already in use \\.\pipe\browserstack\daemonInstance - \\.\pipe\browserstack\daemonInstance
-[Thu, 20 Jul 2023 04:00:09 GMT] Error from server Error: listen EADDRINUSE: address already in use \\.\pipe\browserstack\daemonInstance - \\.\pipe\browserstack\daemonInstance
-[Thu, 20 Jul 2023 04:02:48 GMT] Error from server Error: listen EADDRINUSE: address already in use \\.\pipe\browserstack\daemonInstance - \\.\pipe\browserstack\daemonInstance
-[Fri, 21 Jul 2023 18:18:52 GMT] Error from server Error: listen EADDRINUSE: address already in use \\.\pipe\browserstack\daemonInstance - \\.\pipe\browserstack\daemonInstance
