@@ -1,0 +1,25 @@
+userName: YOUR_USERNAME
+accessKey: YOUR_ACCESS_KEY
+server: hub-cloud.browserstack.com
+framework: testng
+capabilities:
+  projectName: Mobile app testing
+  source: testng:appium-sample-sdk:v1.1
+  app: bs://<custom_id>
+  browserstackLocal: false
+  debug: false # <boolean> # Set to true if you need screenshots for every selenium command ran
+  networkLogs: false # <boolean> Set to true to enable HAR logs capturing
+  consoleLogs: errors
+  skipServerInstallation: true
+  appPackage: org.wikipedia
+  appActivity: org.wikipedia.main.MainActivity
+platforms:
+  - platformName: android
+    deviceName: Samsung Galaxy S23 Ultra
+    platformVersion: 13.0
+  - platformName: android
+    deviceName: Xiaomi Redmi Note 9
+    platformVersion: 10.0
+  - platformName: android
+    deviceName: Motorola Moto G9 Play
+    platformVersion: 10.0

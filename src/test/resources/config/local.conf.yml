@@ -1,0 +1,22 @@
+userName: YOUR_USERNAME
+accessKey: YOUR_ACCESS_KEY
+server: hub-cloud.browserstack.com
+framework: testng
+capabilities:
+  projectName: Mobile app testing
+  source: testng:appium-sample-sdk:v1.1
+  app: bs://<custom_id>
+  browserstackLocal: true
+  automationName: UiAutomator2
+  skipDeviceInitialization: true
+  skipServerInstallation: true
+  appPackage: org.wikipedia
+  appActivity: org.wikipedia.main.MainActivity
+platforms:
+  - platformName: android
+    deviceName: Xiaomi Redmi Note 9
+    platformVersion: 10.0
+    skipServerInstallation: true
+browserstackLocal: true
+debug: true # <boolean> # Set to true if you need screenshots for every selenium command ran
+local: true
