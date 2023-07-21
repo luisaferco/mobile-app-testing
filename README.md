@@ -58,15 +58,31 @@ returning a list of connected devices with their deviceId associated
 
 `DeviceName`: adb -s "deviceId" shell getprop ro.product.model
 
+### Integrate with Browserstack
+
+The *.yml config files were created at the /test/java/resources/config path of the project. This file holds all the required capabilities to run tests on BrowserStack.
+
+It must be added as environment variables the `BROWSERSTACK_USERNAME` and `BROWSERSTACK_ACCESS_KEY` secret variables
+The parameters can be got in the [BrowserStack automate dashboard[(https://www.browserstack.com/automate)
+
 
 ### Running tests 🧪
 
 -Once you have your device enabled, open the Appium either the Appium server or the Appium GUI you have configured and open a connection with IP address 127.0.0.1 and port 4723.
 -Open a terminal and run the following command:
+ ```
+ run mvn verify
+ ```
 
+To run using the Browserstack platform use the following commands
   ```
-  mvn clean verify
+ To run local test: 
   ```
+run mvn verify -P Local
+  ```
+The suite.conf.yml configure all capabilities to run parallel tests through CI/CD pipeline which is configured to run using the following command
+  ```
+run mvn verify -P Suite
 
 ## Links 🔗
 Do you have comments? Let me know on Twitter: [@Luisaferco](https://twitter.com/LuisaFer0826)
