@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Training Mobile Test Suite">
-    <parameter name="conf" value="suite.conf.yml"/>
+    <parameter name="conf" value="local.conf.yml"/>
     <listeners>
         <listener class-name="com.automation.training.tests.config.CustomListener" />
     </listeners>
-    <test name="Pool Test Android" thread-count="2" parallel="methods">
-        <parameter name="searchCriteria" value="Hello World"/>
+    <test name="Search Test">
         <parameter name="platform" value="ANDROID"/>
+        <parameter name="searchCriteria" value="Hello World"/>
         <classes>
             <class name="com.automation.training.tests.NavigationTest"/>
         </classes>
     </test>
-
 </suite> <!-- Suite -->

@@ -1,5 +1,6 @@
 package com.automation.training.util.drivers;
 
+import com.automation.training.util.drivers.enums.CapabilitiesFile;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.remote.DesiredCapabilities;
 

@@ -7,19 +7,16 @@ capabilities:
   source: testng:appium-sample-sdk:v1.1
   app: bs://<custom_id>
   browserstackLocal: true
-  debug: false # <boolean> # Set to true if you need screenshots for every selenium command ran
-  networkLogs: false # <boolean> Set to true to enable HAR logs capturing
-  consoleLogs: errors
+  automationName: UiAutomator2
+  skipDeviceInitialization: true
   skipServerInstallation: true
   appPackage: org.wikipedia
   appActivity: org.wikipedia.main.MainActivity
 platforms:
   - platformName: android
-    deviceName: Samsung Galaxy S23 Ultra
-    platformVersion: 13.0
-  - platformName: android
     deviceName: Xiaomi Redmi Note 9
     platformVersion: 10.0
-  - platformName: android
-    deviceName: Motorola Moto G9 Play
-    platformVersion: 10.0
+    skipServerInstallation: true
+browserstackLocal: true
+debug: true # <boolean> # Set to true if you need screenshots for every selenium command ran
+local: true

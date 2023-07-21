@@ -6,7 +6,6 @@ import com.esotericsoftware.yamlbeans.YamlReader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.Map;
@@ -19,7 +18,7 @@ public class ReadConfigFile {
     private static final Logger LOGGER = LogManager.getLogger(ReadConfigFile.class.getName());
     private static final String PATH_CONFIG = "src/test/resources/config/%s";
     private final String configFile;
-    private Map properties;
+    private Map<String, Object> properties;
 
     public ReadConfigFile(String configFile) {
         this.configFile = configFile;
@@ -40,10 +39,14 @@ public class ReadConfigFile {
         }
 
         try {
-            this.properties = (Map) yamlReader.read();
+            this.properties = (Map<String, Object>) yamlReader.read();
         } catch (YamlException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public Map<String, Object> getProperties() {
+        return properties;
     }
 
     public Object getProperty(Object value) {

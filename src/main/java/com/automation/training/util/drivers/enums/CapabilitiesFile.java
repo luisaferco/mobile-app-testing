@@ -1,4 +1,4 @@
-package com.automation.training.util.drivers;
+package com.automation.training.util.drivers.enums;
 
 
 import com.automation.training.exceptions.NotFoundValueException;
